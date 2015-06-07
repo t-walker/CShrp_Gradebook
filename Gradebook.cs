@@ -6,8 +6,9 @@ namespace CShrp_Gradebook
 {
     class Gradebook
     {
-        public Gradebook()
+        public Gradebook(string name = "")
         {
+            _name = name;
             grades = new List<float>();
         }
 
@@ -36,7 +37,32 @@ namespace CShrp_Gradebook
             return stats;
         }
 
+        
 
+        public string Name
+        {
+            get
+            {
+                return _name;
+            }
+            set
+            {
+                if (_name != value)
+                {
+                    var oldvalue = _name;
+                    _name = value;
+                    if (NameChanged != null)
+                    {
+                        NameChanged(oldvalue, value);
+                    }
+
+                }
+            }
+        }
+
+        public NameChanged NameChanged;
+
+        private string _name;
         private List<float> grades;
     }
 }
