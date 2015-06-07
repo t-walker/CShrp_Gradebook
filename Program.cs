@@ -11,20 +11,32 @@ namespace CShrp_Gradebook
 
         static void Main(string[] args)
         {
-            Gradebook g1 = new Gradebook();
-            Gradebook g2 = g1;
+            Arrays();
+        }
 
-            Console.WriteLine(g2.Name);
-            //Gradebook book = new Gradebook();
-            //book.AddGrade(91f);
-            //book.AddGrade(89.1f);
-            //book.AddGrade(75);
+        private static void Arrays()
+        {
+            float[] grades;
 
-            //GradeStatistics stats = book.ComputeStatistics();
+            grades = new float[3];
 
-            //Console.WriteLine(stats.AverageGrade);
-            //Console.WriteLine(stats.LowestGrade);
-            //Console.WriteLine(stats.HighestGrade);
+            AddGrades();
+
+            grades[0] = 91f;
+            grades[1] = 89.1f;
+            grades[2] = 75f;
+
+            foreach(float grade in grades)
+            {
+                Console.WriteLine(grade);
+            }
+        }
+
+        private static void AddGrades(float[] grades)
+        {
+            grades[0] = 91f;
+            grades[1] = 89.1f;
+            grades[2] = 75f;
         }
     }
 

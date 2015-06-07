@@ -36,7 +36,6 @@ namespace CShrp_Gradebook
             return stats;
         }
 
-        public string Name; 
 
         private List<float> grades;
     }
